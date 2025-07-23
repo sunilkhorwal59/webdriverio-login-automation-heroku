@@ -36,9 +36,7 @@ pipeline {
     }
     post {
         always {
-            // If you have junit xmls, otherwise skip or adjust
-            // junit 'allure-results/*.xml'
-            cleanWs()
+            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
         }
     }
 } 
